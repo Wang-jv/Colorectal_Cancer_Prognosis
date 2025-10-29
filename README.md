@@ -1,31 +1,31 @@
-# 结直肠癌TLS微环境与预后分析项目
+# Colorectal Cancer TLS Microenvironment and Prognosis Analysis Project
 
-## 项目概述
+## Project Overview
 
-本项目是一个基于多组学数据整合的结直肠癌预后分析研究。项目利用MOVICS (Multi-Omics Integration and Visualization in Cancer Subtyping)分析平台，结合转录组、甲基化、体细胞突变等多维度数据，对结直肠癌患者进行分子分型并分析其与预后的关系。特别关注了肿瘤相关淋巴样结构(Tertiary Lymphoid Structures, TLS)在结直肠癌预后中的作用。
+This project performs a multi-omics integrative analysis to study prognosis in colorectal cancer. We use MOVICS (Multi-Omics Integration and Visualization in Cancer Subtyping) to combine transcriptomic, methylation, somatic mutation, and lncRNA data for molecular subtyping and prognosis association analysis. A particular focus is placed on the role of tertiary lymphoid structures (TLS) in colorectal cancer prognosis.
 
-## 数据来源
+## Data Sources
 
-- TCGA-COAD队列数据
-- GEO验证队列(GSE39582)数据
-- MSK-IMPACT结直肠癌队列数据
+- TCGA-COAD and TCGA-READ cohort
+- GEO validation cohort (GSE39582)
+- MSK-IMPACT colorectal cancer cohort
 
-## 分析内容
+## Analyses Performed
 
-### 1. 多组学整合分析
-- 基因表达谱(mRNA)分析
-- 甲基化数据分析
-- 体细胞突变分析
-- lncRNA表达分析
+### 1. Multi-omics Integration
+- mRNA expression analysis
+- DNA methylation analysis
+- Somatic mutation analysis
+- lncRNA expression analysis
 
-### 2. 分子分型
-- 使用10种算法进行分子分型
-- 整合分型结果获得consensus分型
-- 分型结果可视化与验证
+### 2. Molecular Subtyping
+- Apply 10 clustering algorithms for subtype discovery
+- Derive consensus subtypes from combined results
+- Visualize and validate subtype assignments
 
-### 3. 生存分析
-- 不同分子亚型间生存差异分析
-- 构建6基因预后模型
+### 3. Survival Analysis
+- Compare survival between molecular subtypes
+- Build a 6-gene prognostic model composed of:
   - PDZD4
   - PPP1R1A
   - PCOLCE2
@@ -33,60 +33,45 @@
   - CALB2
   - PTH1R
 
-### 4. 功能分析
-- 差异表达基因分析
-- KEGG通路富集分析
-- 免疫浸润分析
-- 药物敏感性分析
+### 4. Functional Analysis
+- Differential expression analysis
+- KEGG pathway enrichment
+- Immune infiltration analyses
+- Drug sensitivity prediction
 
-### 5. 临床相关性分析
-- 临床病理特征关联分析
-- 多因素Cox回归分析
-- 列线图预测模型构建
+### 5. Clinical Correlation
+- Association with clinicopathologic features
+- Multivariable Cox regression analyses
+- Nomogram construction for individualized prediction
 
-## 关键结果
+## Key Findings
 
-1. 确定了基于TLS特征的两个分子亚型
-2. 构建了6基因预后预测模型
-3. 发现了潜在的治疗靶点和生物标志物
-4. 验证了模型在独立队列中的预测效能
+1. Two molecular subtypes related to TLS features were identified.
+2. A 6-gene prognostic signature was developed and evaluated.
+3. Several potential therapeutic targets and biomarkers were highlighted.
+4. The model was validated in independent cohorts.
 
-## 代码结构
+## Code Structure
 
-- `Colorectal_MOVICS_TLS.R`: 主要分析流程代码
-- `supplementary_code.R`: 补充分析代码
-- `data/`: 原始数据和处理后的数据文件
+- `Colorectal_MOVICS_TLS.R`: Main analysis workflow
+- `supplementary_code.R`: Supplementary analyses and plotting
+- `data/`: Raw and processed data files
 
-## 使用说明
+## Usage
 
-### 环境要求
+### Environment requirements
 ```R
-- R >= 4.0
-- MOVICS
-- survival
-- survminer
-- ggplot2
-- dplyr
-- 其他依赖包
+# R >= 4.0
+# MOVICS
+# survival
+# survminer
+# ggplot2
+# dplyr
+# Other R packages used in the scripts (see script headers for full list)
 ```
 
-### 运行步骤
-1. 数据预处理和标准化
-2. 多组学整合分析
-3. 分子分型
-4. 生存分析
-5. 功能注释
-6. 结果可视化
+## References
+Workflow and functions primarily follow the MOVICS vignette: https://xlucpu.github.io/MOVICS/MOVICS-VIGNETTE.html
 
-## 结果文件
-- 分子分型结果
-- 生存分析图
-- 免疫组化验证结果
-- 富集分析结果
-- 预后模型性能评估结果
-
-## 参考文献
-项目分析流程参考MOVICS教程：https://xlucpu.github.io/MOVICS/MOVICS-VIGNETTE.html
-
-## 联系方式
-[18135079495@163.com]
+## Contact
+18135079495@163.com
